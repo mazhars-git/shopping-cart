@@ -11,3 +11,16 @@
 body{
     font-family: sans-serif;
 }
+
+/**
+* ! navbar styling
+**/
+
+.navbar{
+    padding: 25px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #e59500;
+    color: #fff;
+}
