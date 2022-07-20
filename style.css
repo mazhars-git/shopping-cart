@@ -21,6 +21,27 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background-color: #e59500;
     color: #fff;
+}
+
+.cart{
+    position: relative;
+    background-color: #fff;
+    color: #e59500;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.cartAmount{
+    position: absolute;
+    top: -12px;
+    right: -8px;
+    font-size: 15px;
+    background-color: red;
+    color: #fff;
+    padding: 3px;
+    border-radius: 3px;
 }
