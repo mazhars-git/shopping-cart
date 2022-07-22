@@ -26,9 +26,11 @@ let ShopItemData = [{
         img: 'images/female1.jpg'
 }];
 
+let basket = [];
+
 let generateShop = () => {
-    return (shop.innerHTML= ShopItemData.map((e) =>{
-        let {id, name, price, desc, img } = e;
+    return (shop.innerHTML= ShopItemData.map((y) =>{
+        let {id, name, price, desc, img } = y;
         return `
         <div id=product-id-${id} class="item">
             <img width="210px" src=${img} alt="">
@@ -38,9 +40,9 @@ let generateShop = () => {
                 <div class="price-quantity">
                     <h4>$ ${price}</h4>
                     <div class="buttons">
-                        <i class="bi bi-dash"></i>
+                        <i onclick="decrement(${id})" class="bi bi-dash"></i>
                         <div id=${id} class="quantity">0</div>
-                        <i class="bi bi-plus-lg"></i>
+                        <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
                     </div>
                 </div>
             </div>
@@ -50,3 +52,19 @@ let generateShop = () => {
 };
 
 generateShop();
+
+let increment = (id) =>{
+    let selectedItem = id;
+
+    basket.push({
+        id: selectedItem.id,
+        item: 1,
+    })
+    console.log(basket);
+};
+
+let decrement = (id) =>{
+    let selectedItem = id;
+};
+
+let update = () =>{};
