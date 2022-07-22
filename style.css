@@ -62,6 +62,19 @@ i{
     justify-content: center;
     margin-bottom: 100px;
 }
+
+@media (max-width: 1000px) {
+    .shop{
+        grid-template-columns: repeat(2, 223px);
+    }
+}
+@media (max-width: 500px) {
+    .shop{
+        grid-template-columns: repeat(1, 223px);
+    }
+}
+
+
 .item{
     border: 1px solid #212121;
     border-radius: 4px;

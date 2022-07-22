@@ -1,6 +1,6 @@
 let shop = document.getElementById("shop");
 
-let shopItemData = [{
+let ShopItemData = [{
         id: 'aljfldkj',
         name: 'Casual Shirt',
         price: 45,
@@ -27,23 +27,26 @@ let shopItemData = [{
 }];
 
 let generateShop = () => {
-    return (shop.innerHTML= `
-        <div class="item">
-            <img width="210px" src="images/child.jpg" alt="">
+    return (shop.innerHTML= ShopItemData.map((e) =>{
+        let {id, name, price, desc, img } = e;
+        return `
+        <div id=product-id-${id} class="item">
+            <img width="210px" src=${img} alt="">
             <div class="details">
-                <h3>Child shirt</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. animi voluptatem, placeat.</p>
+                <h3>${name}</h3>
+                <p>${desc}</p>
                 <div class="price-quantity">
-                    <h4>$45</h4>
+                    <h4>$ ${price}</h4>
                     <div class="buttons">
                         <i class="bi bi-dash"></i>
-                        <div class="quantity">0</div>
+                        <div id=${id} class="quantity">0</div>
                         <i class="bi bi-plus-lg"></i>
                     </div>
                 </div>
             </div>
         </div>
-    `);
+    `;
+    }).join(""));
 };
 
 generateShop();
